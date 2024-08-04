@@ -5,7 +5,7 @@ import {
   RoomProvider as RoomProviderWrapper,
 } from "@liveblocks/react/suspense";
 import LoadingSpinner from "./LoadingSpinner";
-import LiverCursorProvider from "./LiverCursorProvider";
+import LiveCursorProvider from "./LiveCursorProvider";
 
 function RoomProvider({
   roomId,
@@ -20,7 +20,7 @@ function RoomProvider({
       initialPresence={{ cursor: null }}
     >
       <ClientSideSuspense fallback={<LoadingSpinner />}>
-        <LiverCursorProvider>{children}</LiverCursorProvider>
+        <LiveCursorProvider>{children}</LiveCursorProvider>
       </ClientSideSuspense>
     </RoomProviderWrapper>
   );
